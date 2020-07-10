@@ -101,7 +101,7 @@ int ep_upk(ep_t r, const ep_t p) {
 		}
 	}
 	RLC_CATCH_ANY {
-		THROW(ERR_CAUGHT);
+		RLC_THROW(ERR_CAUGHT);
 	}
 	RLC_FINALLY {
 		fp_free(t);
