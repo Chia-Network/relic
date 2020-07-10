@@ -423,8 +423,8 @@ static int pad_pkcs1(bn_t m, int *p_len, int m_len, int k_len, int operation) {
  * @return RLC_ERR if errors occurred, RLC_OK otherwise.
  */
 static int pad_pkcs2(bn_t m, int *p_len, int m_len, int k_len, int operation) {
-	/* Chia - MSVC does not allow dynamic stack arrays so cap at 2048 */
-        uint8_t pad, h1[RLC_MD_LEN], h2[RLC_MD_LEN], mask[2048];
+	/* Chia - MSVC does not allow dynamic stack arrays so cap at 16384 */
+        uint8_t pad, h1[RLC_MD_LEN], h2[RLC_MD_LEN], mask[16384];
 	int result = RLC_OK;
 	bn_t t;
 
