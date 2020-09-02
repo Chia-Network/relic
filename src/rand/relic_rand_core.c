@@ -54,7 +54,12 @@
 #undef DOUBLE
 
 #include <windows.h>
+
+#ifdef __MINGW32__
+#include <wincrypt.h>
+#else
 #include <Wincrypt.h>
+#endif
 
 #elif SEED == RDRND
 
